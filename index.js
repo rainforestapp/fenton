@@ -44,19 +44,7 @@ export class Http {
   }
 
   authenticateRequest(settings) {
-    let token;
-    let result = settings;
-    const csrfElement = document.querySelector('meta[name="csrf-token"]');
-
-    if (csrfElement) {
-      token = csrfElement.getAttribute('content');
-    }
-
-    if (token !== undefined) {
-      result = merge({}, settings, { headers: { 'X-CSRF-Token': token } });
-    }
-
-    return result;
+    // - authenticating stuff
   }
 
   handleJson(res) {
